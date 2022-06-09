@@ -10,8 +10,13 @@
     width: 1000px;
     /* height: 700px; */
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 100px;
+}
+
+.comments__column {
+    display: flex;
+    flex-direction: column;
 }
 
 .message {

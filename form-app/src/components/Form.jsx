@@ -1,11 +1,20 @@
 import React, { useState } from "react";
 
-function Form(props) {
-  const [state, setState] = useState(props);
+function Form() {
+  const [state, setState] = useState("");
+  const [comments, setComments] = useState([]);
+  const [names, setNames] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+
+    const arrayComments = [...comments];
+    arrayComments.unshift(state.comment);
+    setComments(arrayComments);
+
+    const arrayNames = [...names];
+    arrayNames.unshift(state.name);
+    setNames(arrayNames);
   };
 
   const handleChange = (e) => {
@@ -16,7 +25,19 @@ function Form(props) {
   };
 
   return (
-    <div>
+    <div className="comments">
+      <div className="comments__list">
+          {comments.map((comment) => (
+            <div className="comments__column">
+              <span>{comment}</span>
+            </div>
+          ))}
+          {names.map((name) => (
+            <div className="comments__column">
+              <span>{name}</span>
+            </div>
+          ))}
+      </div>
       <form className="comments" onSubmit={handleSubmit}>
         <input
           data-name={"name"}
