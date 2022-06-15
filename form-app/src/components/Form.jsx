@@ -32,11 +32,6 @@ function Form() {
               <span>{comment}</span>
             </div>
           ))}
-          {/* {names.map((name) => (
-            <div className="comments__column">
-              <span>{name}</span>
-            </div>
-          ))} */}
       </div>
       <form className="comments" onSubmit={handleSubmit}>
         <input

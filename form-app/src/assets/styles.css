@@ -8,15 +8,20 @@
 
 .comments__list {
     width: 1000px;
-    /* height: 700px; */
     display: flex;
     flex-direction: column;
     margin-bottom: 100px;
+    align-items: center;
 }
 
 .comments__column {
     display: flex;
     flex-direction: column;
+    width: 500px;
+}
+
+.comments__column:first-of-type {
+    background-color: rgb(255, 221, 109);
 }
 
 .message {
